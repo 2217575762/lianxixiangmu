@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="vue.main.js"></script> -->
+</head>
+<body>
+    <!-- <script src="vue.main.js"></script> -->
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <div id="app">
+        <table>
+            <tr v-for="(user,index) in userList">
+                <td>{{index}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+            </tr>
+        </table>
+        <br/>
+        <atguigu></atguigu>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                userList:[
+                    {id: 1, username: 'helen'},
+                    {id: 2, username: 'peter'},
+                    {id: 3, username: 'andy'}
+                ]
+            },
+            // 定义组件
+            components: {
+                'atguigu': {
+                    // 组件内容
+                    template:'<ul><li>首页</li><li>学员管理</li></ul>'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
